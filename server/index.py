@@ -36,6 +36,10 @@ def is_valid_youtube_url(url):
     pattern = r"^(https?://)?(www\.)?youtube\.com/watch\?v=[\w-]+(&\S*)?$"
     return re.match(pattern, url) is not None
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    return "Hello, World!", 200
+    
 @app.route('/download/<resolution>', methods=['POST'])
 def download_by_resolution(resolution):
     data = request.get_json()
