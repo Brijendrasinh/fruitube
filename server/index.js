@@ -94,3 +94,5 @@ io.on("connection", (client) => {
 http.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+module.exports = app;
