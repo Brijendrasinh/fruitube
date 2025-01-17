@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 from pytube import YouTube
+from flask_cors import CORS
 import re
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 def download_video(url, resolution):
     try:
